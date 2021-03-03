@@ -1,6 +1,6 @@
 package com.app.baseprojectamanattri.data
 
-import com.app.baseprojectamanattri.app.datasourceImp.RemotDataSourceImp
+import com.app.baseprojectamanattri.framework.datasourceImp.RemotDataSourceImp
 
 class FactoryDataSource {
 

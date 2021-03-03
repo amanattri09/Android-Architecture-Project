@@ -24,3 +24,7 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    hilt_viewmodels = '1.0.0-alpha03'
+}
