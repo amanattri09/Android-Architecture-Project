@@ -7,7 +7,7 @@ class RemotDataSourceImp: RemoteDataSource {
 
     lateinit var restapi: RestApi
 
-    override fun login(username: String, password: String) {
+    override fun getPosts() {
         TODO("Not yet implemented")
     }
 }
