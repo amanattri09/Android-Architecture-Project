@@ -1,5 +1,5 @@
 package com.app.baseprojectamanattri.data.datasource
 
-interface CommonDataSource {
+open class CommonDataSource {
 
 }

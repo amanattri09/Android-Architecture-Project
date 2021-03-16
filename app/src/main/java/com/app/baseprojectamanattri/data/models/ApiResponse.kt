@@ -1,9 +1,11 @@
 package com.app.baseprojectamanattri.data.models
 
+import com.app.baseprojectamanattri.domain.models.Post
+
 class ApiResponse<T>(val status: Status, val data: T?, val message: String?) {
 
     companion object {
-        fun<T> success(data:T?): ApiResponse<T>{
+        fun<T> success(data:T?): ApiResponse<T> {
                 return ApiResponse(Status.SUCCESS,data,null)
         }
 
