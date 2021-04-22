@@ -1,6 +1,4 @@
-package com.app.baseprojectamanattri.data.models
-
-import com.app.baseprojectamanattri.domain.models.Post
+package com.app.baseprojectamanattri.data.entities
 
 class ApiResponse<T>(val status: Status, val data: T?, val message: String?) {
 

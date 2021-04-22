@@ -1,4 +1,4 @@
-package com.app.baseprojectamanattri.ui.base
+package com.app.baseprojectamanattri.presentation.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

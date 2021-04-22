@@ -1,4 +1,4 @@
-package com.app.baseprojectamanattri.ui.base
+package com.app.baseprojectamanattri.presentation.base
 
 import androidx.lifecycle.ViewModel
 
