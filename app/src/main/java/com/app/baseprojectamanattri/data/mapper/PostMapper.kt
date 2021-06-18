@@ -8,9 +8,9 @@ object PostMapper {
     fun map(posts: PostEntity?): List<PostModel> {
         val emptyList: MutableList<PostModel>
         emptyList= arrayListOf()
-        posts?.forEach {
-            emptyList.add(PostModel())
-        }
+        /*posts?.forEach {
+            emptyList.add(PostModel(body, id, title, userId))
+        }*/
         return emptyList
     }
 

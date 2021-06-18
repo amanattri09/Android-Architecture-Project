@@ -1,4 +1,4 @@
-package com.app.baseprojectamanattri.presentation.sample
+package com.app.baseprojectamanattri.presentation.post
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,10 +11,10 @@ import com.app.baseprojectamanattri.data.entities.Status
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SampleActivity : AppCompatActivity(), View.OnClickListener {
+class PostActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var button: Button
-    private val viewmodel: SampleActivityViewModel by viewModels()
+    private val viewmodel: PostViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
