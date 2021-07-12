@@ -1,12 +1,21 @@
 package com.app.baseprojectamanattri.presentation.base
 
-import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.viewbinding.ViewBinding
 
-class BaseActivity : AppCompatActivity() {
+abstract open class BaseActivity<Binding:ViewBinding> : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    lateinit var binding: Binding
+
+
+    fun setContentView(binding:Binding){
+        this.binding=binding
+        setContentView(binding.root)
+    }
+
+    fun showToast(msg: String? ="Something went wrong !!"){
+        Toast.makeText(this,msg?:"Showed null value !!",Toast.LENGTH_SHORT).show()
     }
 
 }

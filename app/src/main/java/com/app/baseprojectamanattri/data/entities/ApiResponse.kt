@@ -7,7 +7,7 @@ class ApiResponse<T>(val status: Status, val data: T?, val message: String?) {
                 return ApiResponse(Status.SUCCESS,data,null)
         }
 
-        fun<T> error(msg:String ,data :T?):ApiResponse<T>{
+        fun<T> error(msg: String?, data:T?):ApiResponse<T>{
             return ApiResponse(Status.ERROR,data,msg)
         }
 

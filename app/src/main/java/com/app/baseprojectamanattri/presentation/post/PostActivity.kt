@@ -1,51 +1,55 @@
 package com.app.baseprojectamanattri.presentation.post
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
-import com.app.baseprojectamanattri.R
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.baseprojectamanattri.data.entities.Status
+import com.app.baseprojectamanattri.databinding.ActivityPostLayoutBinding
+import com.app.baseprojectamanattri.presentation.base.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class PostActivity : AppCompatActivity(), View.OnClickListener {
+class PostActivity : BaseActivity<ActivityPostLayoutBinding>(){
 
-    private lateinit var button: Button
     private val viewmodel: PostViewModel by viewModels()
+    private lateinit var postRecylarAdapter:PostRecylarAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sample_layout)
-        button = findViewById(R.id.buttonLoadData)
-        button.setOnClickListener(this)
+        setContentView(ActivityPostLayoutBinding.inflate(layoutInflater))
+        setViews()
+        init()
         setUpObserver()
+    }
+
+    private fun init() {
+        viewmodel.fetchPostByRx()
+    }
+
+    private fun setViews() {
+        binding.rvPosts.layoutManager=LinearLayoutManager(this)
+        binding.rvPosts.addItemDecoration(DividerItemDecoration(this,DividerItemDecoration.VERTICAL))
+        postRecylarAdapter=PostRecylarAdapter()
+        binding.rvPosts.adapter=postRecylarAdapter
     }
 
     private fun setUpObserver() {
         viewmodel.posts.observe(this, Observer {
             when (it.status) {
                 Status.SUCCESS -> {
-
+                    //dismiss progress dialog here
+                    postRecylarAdapter.setData(it.data as ArrayList)
                 }
                 Status.ERROR -> {
-
+                    //dismiss progress dialog here
+                    showToast(it?.message)
                 }
                 Status.LOADING -> {
-
+                    //show progress dialog  here
                 }
             }
         })
-    }
-
-
-    override fun onClick(v: View?) {
-        when (v?.id) {
-            R.id.buttonLoadData -> {
-                viewmodel.fetchPost()
-            }
-        }
     }
 }

@@ -8,8 +8,8 @@ import com.app.baseprojectamanattri.domain.post.interactor.PostUserCase
 import com.app.baseprojectamanattri.domain.post.models.PostModel
 import com.app.baseprojectamanattri.presentation.base.BaseViewModel
 import com.app.baseprojectamanattri.presentation.common.defaultSubscrition
-import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -20,6 +20,11 @@ class PostViewModel @ViewModelInject constructor(private val postUserCase: PostU
     private lateinit var postsArray: List<PostModel>
     val posts = MutableLiveData<ApiResponse<List<PostModel>>>()
 
+    fun fetchPostByRx() {
+        postUserCase.getPostsRx().subscribeOn(Schedulers.io()).
+        observeOn(AndroidSchedulers.mainThread()).defaultSubscrition(posts).addToCompositeDisposable()
+    }
+
     fun fetchPost() {
         posts.postValue(ApiResponse.loading(null))
         viewModelScope.launch {
@@ -29,16 +34,10 @@ class PostViewModel @ViewModelInject constructor(private val postUserCase: PostU
             if (!(postsArray?.isEmpty())) {
                 posts.postValue(ApiResponse.success(postsArray))
             } else {
-                posts.postValue(ApiResponse.error("", null))
+                posts.postValue(ApiResponse.error("Something went wrong !!", null))
             }
         }
     }
 
-    fun fetchPostByRx() {
-        postUserCase.getPostsRx().observeOn(AndroidSchedulers.mainThread()).
-        observeOn(AndroidSchedulers.mainThread()).defaultSubscrition()
-    }
-
 
 }
-

@@ -6,6 +6,7 @@ import io.reactivex.Single
 import javax.inject.Inject
 
 class PostUserCase  @Inject constructor(val repositary: PostRepositary){
+
     fun getPosts(): List<PostModel>? {
         return repositary.getPosts()
     }
@@ -13,6 +14,4 @@ class PostUserCase  @Inject constructor(val repositary: PostRepositary){
     fun getPostsRx(): Single<List<PostModel>> {
         return repositary.getPostsRx()
     }
-
-
 }

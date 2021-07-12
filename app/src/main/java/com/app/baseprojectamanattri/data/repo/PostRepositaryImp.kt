@@ -16,7 +16,7 @@ class PostRepositaryImp @Inject constructor(val apiService: ApiService) :PostRep
 
     override fun getPostsRx(): Single<List<PostModel>> {
         return apiService.listReposRx().map {
-            it.posts.map {
+            it.map {
                 it.mapToModel()
             }
         }
