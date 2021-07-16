@@ -1,6 +1,5 @@
 package com.app.baseprojectamanattri.presentation.post
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.app.baseprojectamanattri.data.entities.ApiResponse
@@ -8,13 +7,16 @@ import com.app.baseprojectamanattri.domain.post.interactor.PostUserCase
 import com.app.baseprojectamanattri.domain.post.models.PostModel
 import com.app.baseprojectamanattri.presentation.base.BaseViewModel
 import com.app.baseprojectamanattri.presentation.common.defaultSubscrition
+import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class PostViewModel @ViewModelInject constructor(private val postUserCase: PostUserCase) :
+@HiltViewModel
+class PostViewModel @Inject constructor(private val postUserCase: PostUserCase) :
     BaseViewModel() {
 
     private lateinit var postsArray: List<PostModel>
