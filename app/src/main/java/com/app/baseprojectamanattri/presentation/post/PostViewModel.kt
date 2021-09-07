@@ -27,7 +27,7 @@ class PostViewModel @Inject constructor(private val postUserCase: PostUserCase) 
         observeOn(AndroidSchedulers.mainThread()).defaultSubscrition(posts).addToCompositeDisposable()
     }
 
-    fun fetchPost() {
+    fun fetchPostUsingCoroutines() {
         posts.postValue(ApiResponse.loading(null))
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
@@ -40,6 +40,5 @@ class PostViewModel @Inject constructor(private val postUserCase: PostUserCase) 
             }
         }
     }
-
 
 }

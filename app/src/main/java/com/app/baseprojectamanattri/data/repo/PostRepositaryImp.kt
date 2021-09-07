@@ -9,17 +9,17 @@ import javax.inject.Inject
 
 class PostRepositaryImp @Inject constructor(val apiService: ApiService) :PostRepositary {
 
-    override fun getPosts(): List<PostModel>? {
-        var posts = apiService.listRepos().execute().body()
-        return PostMapper.map(posts)
-    }
-
     override fun getPostsRx(): Single<List<PostModel>> {
         return apiService.listReposRx().map {
             it.map {
                 it.mapToModel()
             }
         }
+    }
+
+    override fun getPostsByCoroutines(): List<PostModel>? {
+        var posts = apiService.listRepos().execute().body()
+        return PostMapper.map(posts)
     }
 
 }
