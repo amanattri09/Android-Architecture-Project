@@ -1,4 +1,4 @@
-package com.app.baseprojectamanattri.presentation.base
+package com.app.baseprojectamanattri.presentation.common.base
 
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity

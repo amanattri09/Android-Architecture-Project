@@ -1,11 +1,11 @@
-package com.app.baseprojectamanattri.presentation.post
+package com.app.baseprojectamanattri.presentation.views.post
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.app.baseprojectamanattri.data.entities.ApiResponse
+import com.app.baseprojectamanattri.data.remote.post.entities.ApiResponse
 import com.app.baseprojectamanattri.domain.post.interactor.PostUserCase
 import com.app.baseprojectamanattri.domain.post.models.PostModel
-import com.app.baseprojectamanattri.presentation.base.BaseViewModel
+import com.app.baseprojectamanattri.presentation.common.base.BaseViewModel
 import com.app.baseprojectamanattri.presentation.common.defaultSubscrition
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers

@@ -1,4 +1,4 @@
-package com.app.baseprojectamanattri
+package com.app.baseprojectamanattri.presentation
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

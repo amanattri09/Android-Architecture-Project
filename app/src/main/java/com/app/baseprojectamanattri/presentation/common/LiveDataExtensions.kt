@@ -1,7 +1,7 @@
 package com.app.baseprojectamanattri.presentation.common
 
 import androidx.lifecycle.MutableLiveData
-import com.app.baseprojectamanattri.data.entities.ApiResponse
+import com.app.baseprojectamanattri.data.remote.post.entities.ApiResponse
 import io.reactivex.Single
 import io.reactivex.disposables.Disposable
 

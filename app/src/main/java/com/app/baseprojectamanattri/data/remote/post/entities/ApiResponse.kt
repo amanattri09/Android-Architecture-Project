@@ -1,4 +1,4 @@
-package com.app.baseprojectamanattri.data.entities
+package com.app.baseprojectamanattri.data.remote.post.entities
 
 class ApiResponse<T>(val status: Status, val data: T?, val message: String?) {
 

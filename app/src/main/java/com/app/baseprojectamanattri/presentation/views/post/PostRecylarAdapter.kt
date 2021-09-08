@@ -1,4 +1,4 @@
-package com.app.baseprojectamanattri.presentation.post
+package com.app.baseprojectamanattri.presentation.views.post
 
 import android.view.LayoutInflater
 import android.view.View

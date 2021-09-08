@@ -1,7 +1,7 @@
-package com.app.baseprojectamanattri.data.repo
+package com.app.baseprojectamanattri.data.remote.post.repo
 
-import com.app.baseprojectamanattri.data.api.ApiService
-import com.app.baseprojectamanattri.data.mapper.PostMapper
+import com.app.baseprojectamanattri.network.api.ApiService
+import com.app.baseprojectamanattri.data.remote.post.mapper.PostMapper
 import com.app.baseprojectamanattri.domain.post.models.PostModel
 import com.app.baseprojectamanattri.domain.post.repositary.PostRepositary
 import io.reactivex.Single

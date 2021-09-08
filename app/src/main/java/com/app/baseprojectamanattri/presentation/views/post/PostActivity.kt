@@ -1,13 +1,13 @@
-package com.app.baseprojectamanattri.presentation.post
+package com.app.baseprojectamanattri.presentation.views.post
 
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.app.baseprojectamanattri.data.entities.Status
+import com.app.baseprojectamanattri.data.remote.post.entities.Status
 import com.app.baseprojectamanattri.databinding.ActivityPostLayoutBinding
-import com.app.baseprojectamanattri.presentation.base.BaseActivity
+import com.app.baseprojectamanattri.presentation.common.base.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

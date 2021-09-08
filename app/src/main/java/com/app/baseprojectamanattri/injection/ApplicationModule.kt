@@ -1,7 +1,7 @@
 package com.app.baseprojectamanattri.injection
 
 import com.app.baseprojectamanattri.BuildConfig
-import com.app.baseprojectamanattri.data.api.ApiService
+import com.app.baseprojectamanattri.network.api.ApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
