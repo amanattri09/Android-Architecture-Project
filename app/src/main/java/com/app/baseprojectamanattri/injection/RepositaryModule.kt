@@ -14,6 +14,7 @@ class RepositaryModule {
 
     @Singleton
     @Provides
-    fun providesPostRepositary(postRepositaryImp: PostRepositaryImp):PostRepositary=postRepositaryImp
+    fun providesPostRepositary(postRepositaryImp: PostRepositaryImp): PostRepositary =
+        postRepositaryImp
 
-    }
+}

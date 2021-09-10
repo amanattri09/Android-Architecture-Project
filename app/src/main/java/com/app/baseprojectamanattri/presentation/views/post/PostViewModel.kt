@@ -25,7 +25,7 @@ class PostViewModel @Inject constructor(private val postUserCase: PostUserCase) 
 
     fun fetchPostByRx() {
         postUserCase.getPostsRx().subscribeOn(Schedulers.io()).
-        observeOn(AndroidSchedulers.mainThread()).defaultSubscrition(posts,true).addToCompositeDisposable()
+        observeOn(AndroidSchedulers.mainThread()).defaultSubscrition(posts,false).addToCompositeDisposable()
     }
 
     fun getPosts(): LiveData<Result<List<PostModel>>> {
