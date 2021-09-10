@@ -1,20 +1,47 @@
 package com.app.baseprojectamanattri.presentation.common
 
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.app.baseprojectamanattri.data.remote.post.entities.ApiResponse
+import com.app.baseprojectamanattri.data.remote.post.entities.Result
 import io.reactivex.Single
 import io.reactivex.disposables.Disposable
 
-fun <Param> Single<Param>.defaultSubscrition(posts: MutableLiveData<ApiResponse<Param>>): Disposable {
-    return this.doOnSubscribe{
-        posts.postValue(ApiResponse.loading(null))
+private fun <T> MutableLiveData<Result<T>>.setLoading() = postValue(Result.Loading)
+private fun <T> MutableLiveData<Result<T>>.setSuccess(data: T) = postValue(Result.Success(data))
+private fun <T> MutableLiveData<Result<T>>.setError(throwable: Throwable, showErrorView: Boolean) = postValue(Result.Error(throwable,showErrorView))
+
+
+
+fun <Param> Single<Param>.defaultSubscrition(posts: MutableLiveData<Result<Param>>,showErrorView:Boolean): Disposable {
+    return this.doOnSubscribe {
+        posts.setLoading()
     }.subscribe({
-        posts.postValue(ApiResponse.success(it))
-    },{
-        posts.postValue(ApiResponse.error(it.message,null))
+        posts.setSuccess(it)
+    }, {
+        posts.setError(it,showErrorView)
     })
 }
 
-private fun <T> MutableLiveData<ApiResponse<T>>.setLoading() = postValue(ApiResponse.loading(null))
-private fun <T> MutableLiveData<ApiResponse<T>>.setSuccess() = postValue(ApiResponse.loading(null))
-private fun <T> MutableLiveData<ApiResponse<T>>.setError() = postValue(ApiResponse.loading(null))
+fun <T> LiveData<Result<T>>.customObserver(
+    owner: LifecycleOwner,
+    onLoading: (Boolean) -> Unit,
+    onSuccess: ((data:T) -> Unit)?,
+    onError: ((throwable:Throwable,showError:Boolean) -> Unit)?
+) {
+    this.observe(owner, {
+        when (it) {
+            is Result.Loading -> {
+                onLoading.invoke(true)
+            }
+            is Result.Success<T> -> {
+                onLoading.invoke(false)
+                onSuccess?.invoke(it.data)
+            }
+            is Result.Error -> {
+                onLoading.invoke(false)
+                onError?.invoke(it.throwable,it.showErrorView)
+            }
+        }
+    })
+}

@@ -24,7 +24,7 @@ class PostRecylarAdapter : RecyclerView.Adapter<PostRecylarAdapter.PostViewHolde
         return posts.size
     }
 
-    fun setData(posts: ArrayList<PostModel>) {
+    fun setData(posts: List<PostModel>) {
         this.posts.clear()
         this.posts.addAll(posts)
         notifyDataSetChanged()

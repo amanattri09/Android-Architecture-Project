@@ -1,8 +1,9 @@
 package com.app.baseprojectamanattri.presentation.views.post
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.app.baseprojectamanattri.data.remote.post.entities.ApiResponse
+import com.app.baseprojectamanattri.data.remote.post.entities.Result
 import com.app.baseprojectamanattri.domain.post.interactor.PostUserCase
 import com.app.baseprojectamanattri.domain.post.models.PostModel
 import com.app.baseprojectamanattri.presentation.common.base.BaseViewModel
@@ -20,25 +21,15 @@ class PostViewModel @Inject constructor(private val postUserCase: PostUserCase) 
     BaseViewModel() {
 
     private lateinit var postsArray: List<PostModel>
-    val posts = MutableLiveData<ApiResponse<List<PostModel>>>()
+    val posts = MutableLiveData<Result<List<PostModel>>>()
 
     fun fetchPostByRx() {
         postUserCase.getPostsRx().subscribeOn(Schedulers.io()).
-        observeOn(AndroidSchedulers.mainThread()).defaultSubscrition(posts).addToCompositeDisposable()
+        observeOn(AndroidSchedulers.mainThread()).defaultSubscrition(posts,true).addToCompositeDisposable()
     }
 
-    fun fetchPostUsingCoroutines() {
-        posts.postValue(ApiResponse.loading(null))
-        viewModelScope.launch {
-            withContext(Dispatchers.IO) {
-                postsArray = postUserCase.getPosts()!!
-            }
-            if (!(postsArray?.isEmpty())) {
-                posts.postValue(ApiResponse.success(postsArray))
-            } else {
-                posts.postValue(ApiResponse.error("Something went wrong !!", null))
-            }
-        }
+    fun getPosts(): LiveData<Result<List<PostModel>>> {
+        return posts;
     }
 
 }
