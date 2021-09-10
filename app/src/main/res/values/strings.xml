@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">BaseProjectAmanAttri</string>
+    <string name="session_expired">session_expired</string>
+    <string name="alert">Alert</string>
 </resources>

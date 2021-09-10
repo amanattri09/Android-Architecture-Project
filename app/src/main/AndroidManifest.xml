@@ -13,7 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BaseProjectAmanAttri">
         <activity android:name="com.app.baseprojectamanattri.presentation.views.splash.SplashActivity"></activity>
-        <activity android:name="com.app.baseprojectamanattri.presentation.views.welcome.WelcomeActivity"></activity>
         <activity android:name="com.app.baseprojectamanattri.presentation.views.post.PostActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

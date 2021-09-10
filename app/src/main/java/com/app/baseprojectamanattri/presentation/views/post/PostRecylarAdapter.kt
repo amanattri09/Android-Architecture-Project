@@ -35,6 +35,5 @@ class PostRecylarAdapter : RecyclerView.Adapter<PostRecylarAdapter.PostViewHolde
         fun bind(post: PostModel) {
             binding.textView.setText( post.title)
         }
-
     }
 }
