@@ -1,5 +1,8 @@
 package com.app.baseprojectamanattri.injection
 
+import android.app.Application
+import android.content.SharedPreferences
+import android.preference.PreferenceManager
 import com.app.baseprojectamanattri.BuildConfig
 import com.app.baseprojectamanattri.network.api.ApiService
 import dagger.Module
@@ -48,5 +51,10 @@ class ApplicationModule {
     @Singleton
     fun providesApiService(retrofit: Retrofit): ApiService=retrofit.create(ApiService::class.java)
 
+    @Provides
+    @Singleton
+    fun provideSharedPref(application: Application):SharedPreferences{
+        return PreferenceManager.getDefaultSharedPreferences(application)
+    }
 
 }
