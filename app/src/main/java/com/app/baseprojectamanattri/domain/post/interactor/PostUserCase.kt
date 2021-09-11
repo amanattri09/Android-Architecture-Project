@@ -7,10 +7,6 @@ import javax.inject.Inject
 
 class PostUserCase  @Inject constructor(val repositary: PostRepositary){
 
-    fun getPosts(): List<PostModel>? {
-        return repositary.getPostsByCoroutines()
-    }
-
     fun getPostsRx(): Single<List<PostModel>> {
         return repositary.getPostsRx()
     }

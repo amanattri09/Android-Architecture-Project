@@ -8,8 +8,6 @@ import retrofit2.http.GET
 
 
 interface ApiService {
-    @GET("/posts")
-    fun listRepos(): Call<PostEntity>
 
     @GET("/posts")
     fun listReposRx(): Single<List<PostEntityItem>>
