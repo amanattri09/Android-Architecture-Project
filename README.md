@@ -1,7 +1,7 @@
 # Android-Architecture-Project
 
 This project is Demo of creating a stable Android structure for any Repositary/Api/Database Based project. <br>
-Project structure is based on clearn architectur by Robert C Martin<br>
+Project structure is based on Clean architecture by Robert C Martin<br>
 
 Projects uses following major dependencies in this project :<br>
 -RX Java <br>
