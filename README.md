@@ -7,7 +7,6 @@ Projects uses following major dependencies in this project :<br>
 -RX Java <br>
 -Dagger Hilt <br>
 -Live Data <br>
--Sealed class 
 
 Benifits of using this project: <br>
 -All the error during any Api call all reaches back to BaseActivity. <br>
