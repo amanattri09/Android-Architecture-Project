@@ -1,4 +1,4 @@
-package com.app.baseprojectamanattri.data.entities
+package com.app.baseprojectamanattri.data.remote.post.entities
 
 import com.app.baseprojectamanattri.domain.post.models.PostModel
 

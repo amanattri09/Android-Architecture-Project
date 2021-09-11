@@ -1,4 +1,4 @@
-package com.app.baseprojectamanattri.presentation.post
+package com.app.baseprojectamanattri.presentation.views.post
 
 import android.view.LayoutInflater
 import android.view.View
@@ -24,7 +24,7 @@ class PostRecylarAdapter : RecyclerView.Adapter<PostRecylarAdapter.PostViewHolde
         return posts.size
     }
 
-    fun setData(posts: ArrayList<PostModel>) {
+    fun setData(posts: List<PostModel>) {
         this.posts.clear()
         this.posts.addAll(posts)
         notifyDataSetChanged()
@@ -35,6 +35,5 @@ class PostRecylarAdapter : RecyclerView.Adapter<PostRecylarAdapter.PostViewHolde
         fun bind(post: PostModel) {
             binding.textView.setText( post.title)
         }
-
     }
 }

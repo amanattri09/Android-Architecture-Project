@@ -1,6 +1,6 @@
-package com.app.baseprojectamanattri.data.mapper
+package com.app.baseprojectamanattri.data.remote.post.mapper
 
-import com.app.baseprojectamanattri.data.entities.PostEntity
+import com.app.baseprojectamanattri.data.remote.post.entities.PostEntity
 import com.app.baseprojectamanattri.domain.post.models.PostModel
 
 object PostMapper {

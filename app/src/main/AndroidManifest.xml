@@ -3,18 +3,18 @@
     package="com.app.baseprojectamanattri">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name=".MyApplication"
+        android:name=".presentation.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BaseProjectAmanAttri">
-        <activity android:name=".presentation.splash.SplashActivity"></activity>
-        <activity android:name=".presentation.welcome.WelcomeActivity"></activity>
-        <activity android:name=".presentation.post.PostActivity">
+        <activity android:name="com.app.baseprojectamanattri.presentation.views.splash.SplashActivity"></activity>
+        <activity android:name="com.app.baseprojectamanattri.presentation.views.post.PostActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

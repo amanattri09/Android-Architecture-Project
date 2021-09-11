@@ -1,4 +1,4 @@
-package com.app.baseprojectamanattri.utilities
+package com.app.baseprojectamanattri.presentation.common.utilities
 
 class AppConstants {
    companion object {

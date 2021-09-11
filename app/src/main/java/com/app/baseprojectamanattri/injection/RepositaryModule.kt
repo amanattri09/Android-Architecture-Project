@@ -1,6 +1,6 @@
 package com.app.baseprojectamanattri.injection
 
-import com.app.baseprojectamanattri.data.repo.PostRepositaryImp
+import com.app.baseprojectamanattri.data.remote.post.repo.PostRepositaryImp
 import com.app.baseprojectamanattri.domain.post.repositary.PostRepositary
 import dagger.Module
 import dagger.Provides
@@ -14,6 +14,7 @@ class RepositaryModule {
 
     @Singleton
     @Provides
-    fun providesPostRepositary(postRepositaryImp: PostRepositaryImp):PostRepositary=postRepositaryImp
+    fun providesPostRepositary(postRepositaryImp: PostRepositaryImp): PostRepositary =
+        postRepositaryImp
 
-    }
+}
