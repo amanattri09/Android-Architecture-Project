@@ -10,6 +10,6 @@ Project uses following major dependencies in this project :<br>
 
 Benifits of using this project: <br>
 -All the error during any Api call all reaches back to BaseActivity. <br>
--Session expired can be easily managed as all error reaches back on same point of code  <br>
+-Session expired is be easily managed as all error reaches back on same point of code  <br>
 -Project uses a test api to show data on screen <br>
 -Project also works offline.When device is connected, Data is converted to json and saved in shared prefrence and when app is opened offline then data is displayed from Shared prefrence
