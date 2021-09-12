@@ -3,7 +3,7 @@
 This project is a Demo of creating a stable Android structure for any Api/Database Based project. <br>
 Project structure is based on Clean architecture by Robert C Martin<br>
 
-Projects uses following major dependencies in this project :<br>
+Project uses following major dependencies in this project :<br>
 -RX Java <br>
 -Dagger Hilt <br>
 -Live Data <br>
