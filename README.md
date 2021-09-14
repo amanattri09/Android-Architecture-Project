@@ -13,3 +13,7 @@ Benifits of using this project: <br>
 -Session expired is easily managed as all error reaches back on same point of code  <br>
 -Project uses a test api to show data on screen <br>
 -Project also works offline.When device is connected, Data is converted to json and saved in shared prefrence and when app is opened offline then data is displayed from Shared prefrence
+
+
+<img src="https://github.com/amanattri09/Android-Architecture-Project/blob/master/media/media_1.jpeg" width="500" style="max-width:300%;">
+ 
