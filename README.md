@@ -14,7 +14,7 @@ Project structure is based on Clean architecture by Robert C Martin<br>
 -All the error during any Api call all reaches back to BaseActivity. <br>
 -Session expired is easily managed as all error reaches back on same point of code  <br>
 -Project uses a test api to show data on screen <br>
--Project also works offline.When device is connected, Data is converted to json and saved in shared prefrence and when app is opened offline then data is displayed from Shared prefrence
+-Project also works offline.When device is connected, Data is converted to json and saved in Shared Prefrence and when app is opened offline then data is displayed from Shared Prefrence
 
 
 <img src="https://github.com/amanattri09/Android-Architecture-Project/blob/master/media/media_1.jpeg" width="500" style="max-width:300%;">
