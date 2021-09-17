@@ -7,7 +7,6 @@ Project structure is based on Clean architecture by Robert C Martin<br>
 
 -RX Java <br>
 -Dagger Hilt <br>
--Live Data <br>
 
 <b>Benifits of using this project: </b><br>
 
