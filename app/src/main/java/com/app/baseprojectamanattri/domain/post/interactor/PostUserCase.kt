@@ -10,4 +10,9 @@ class PostUserCase  @Inject constructor(val repositary: PostRepositary){
     fun getPostsRx(): Single<List<PostModel>> {
         return repositary.getPostsRx()
     }
+
+    fun getPost(postId:String): Single<PostModel> {
+        return repositary.getPost(postId)
+    }
+
 }

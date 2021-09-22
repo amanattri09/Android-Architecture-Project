@@ -35,5 +35,11 @@ class PostRepositaryImp @Inject constructor(
         }
     }
 
+    override fun getPost(postId: String): Single<PostModel> {
+        return apiService.getPostById(postId).map {
+            it.mapToModel()
+        }
+    }
+
 
 }

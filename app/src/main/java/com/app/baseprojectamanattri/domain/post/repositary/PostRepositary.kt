@@ -5,4 +5,5 @@ import io.reactivex.Single
 
 interface PostRepositary {
     fun getPostsRx(): Single<List<PostModel>>
+    fun getPost(postId:String): Single<PostModel>
 }

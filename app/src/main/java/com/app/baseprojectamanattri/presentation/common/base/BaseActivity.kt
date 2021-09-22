@@ -10,6 +10,7 @@ import com.app.baseprojectamanattri.network.ErrorCodes
 import com.app.baseprojectamanattri.network.NetworkError
 import com.app.baseprojectamanattri.presentation.MyApplication
 import com.app.baseprojectamanattri.presentation.common.compoundviews.ErrorView
+import com.app.baseprojectamanattri.presentation.common.hideKeyboard
 import com.app.baseprojectamanattri.presentation.common.utilities.AlertManager
 
 abstract open class BaseActivity<Binding : ViewBinding> : AppCompatActivity() {
@@ -26,6 +27,11 @@ abstract open class BaseActivity<Binding : ViewBinding> : AppCompatActivity() {
 
     fun showToast(msg: String? = "Something went wrong !!") {
         Toast.makeText(this, msg ?: "Showed null value !!", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        hideKeyboard()
     }
 
     fun onLoading(show: Boolean) {
@@ -57,7 +63,7 @@ abstract open class BaseActivity<Binding : ViewBinding> : AppCompatActivity() {
         } else {
             AlertManager.showNegativeAlert(
                 this,
-                "_ERROR_PLEASE_TRY_LATER",
+                getString(R.string.please_try_again),
                 getString(R.string.alert)
             )
         }
