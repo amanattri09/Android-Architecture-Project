@@ -1,8 +1,10 @@
 package com.app.baseprojectamanattri.presentation.common
 
+import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
 import android.net.ConnectivityManager
+import android.view.inputmethod.InputMethodManager
 
 /** Network Extensions */
 fun Context.isNetworkAvailable(): Boolean {
@@ -38,4 +40,11 @@ inline fun SharedPreferences.editNdCommit(operation: (SharedPreferences.Editor) 
     operation(editor)
     editor.apply()
 }
+
+
+fun Activity.hideKeyboard() {
+    val manager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+    manager.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
+}
+
 

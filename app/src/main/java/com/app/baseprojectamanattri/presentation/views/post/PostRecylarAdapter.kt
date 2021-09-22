@@ -6,10 +6,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.app.baseprojectamanattri.databinding.ItemPostBinding
 import com.app.baseprojectamanattri.domain.post.models.PostModel
+import com.app.baseprojectamanattri.presentation.views.postdetail.PostDetailActivity
 
 class PostRecylarAdapter : RecyclerView.Adapter<PostRecylarAdapter.PostViewHolder>() {
 
-    private var posts= ArrayList<PostModel>()
+    private var posts = ArrayList<PostModel>()
+    var onItemSelected: ((PostModel) -> Unit)? =null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
         var binding = ItemPostBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -30,10 +32,14 @@ class PostRecylarAdapter : RecyclerView.Adapter<PostRecylarAdapter.PostViewHolde
         notifyDataSetChanged()
     }
 
-    class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var binding: ItemPostBinding = ItemPostBinding.bind(itemView)
         fun bind(post: PostModel) {
-            binding.textView.setText( post.title)
+            binding.textView.setText(post.title)
+            binding.cvPostRoot.setOnClickListener {
+                onItemSelected?.invoke(post)
+            }
         }
     }
+
 }
