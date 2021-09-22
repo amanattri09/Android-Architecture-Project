@@ -19,7 +19,7 @@ Project structure is based on Clean architecture by Robert C Martin<br>
 the probability of any api based error to almost 0% :)
 
 
-<img src="https://github.com/amanattri09/Android-Architecture-Project/blob/master/media/media_2.png" width="500" style="max-width:300%;">  <br>
+<img src="https://github.com/amanattri09/Android-Architecture-Project/blob/master/media/media_2.png" width="500" style="max-width:200%;">  
 
-<img src="https://github.com/amanattri09/Android-Architecture-Project/blob/master/media/media_3.png" width="500" style="max-width:300%;">
+<img src="https://github.com/amanattri09/Android-Architecture-Project/blob/master/media/media_3.png" width="500" style="max-width:200%;">
  
