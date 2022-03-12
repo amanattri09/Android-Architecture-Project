@@ -8,6 +8,8 @@ Project structure is based on Clean architecture by Robert C Martin<br>
 -RX Java <br>
 -Dagger Hilt <br>
 
+<b>Wait.... If you do not want to use RxJava go ahead use Coroutine Flow. This(https://github.com/amanattri09/CoroutinesFlowExample) example is same structure only with Coroutine Flow.</b><br>
+
 <b>Benifits of using this project: </b><br>
 
 -All the errors during any api call , reaches back to BaseActivity. <br>
@@ -17,9 +19,6 @@ Project structure is based on Clean architecture by Robert C Martin<br>
 -Project shows reusable code for displaying progress bar and error dialog for any screen and api. <br>
 -There is common flow for consuming any api and handling their responses. Once all errors/cases are handled for single api the same flow will work for all apis so you have reduced 
 the probability of any api based error to almost 0% :) <br>
-
-
-<b>Wait.... If you do not want to use RxJava go ahead use Coroutine Flow. This(https://github.com/amanattri09/CoroutinesFlowExample) example is same structure only with Coroutine Flow.</b><br>
 
 
 <img src="https://github.com/amanattri09/Android-Architecture-Project/blob/master/media/media_2.png" width="500" style="max-width:200%;"> <br>
