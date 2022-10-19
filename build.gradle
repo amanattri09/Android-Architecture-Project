@@ -14,6 +14,16 @@ buildscript {
     }
 }
 
+plugins {
+  id "org.sonarqube" version "3.4.0.2513"
+}
+
+sonarqube {
+  properties {
+    property "sonar.projectKey", "amanattri09_Android-Architecture-Project_AYPvULHg_JafnDh1W-r1"
+  }
+}
+
 allprojects {
     repositories {
         google()
