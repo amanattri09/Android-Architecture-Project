@@ -7,6 +7,8 @@ import dagger.hilt.android.HiltAndroidApp
 @HiltAndroidApp
 class MyApplication :Application(){
 
+    //test comment
+
     private var isRestarting: Boolean = false
 
     fun onLogout() {
