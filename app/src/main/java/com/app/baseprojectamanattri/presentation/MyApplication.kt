@@ -7,7 +7,7 @@ import dagger.hilt.android.HiltAndroidApp
 @HiltAndroidApp
 class MyApplication :Application(){
 
-    //test comment test
+    //test comment test tset
 
     private var isRestarting: Boolean = false
 
