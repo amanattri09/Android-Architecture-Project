@@ -1,14 +1,14 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext.kotlin_version = "1.4.30"
+    ext.kotlin_version = "1.7.20"
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:4.1.1"
+        classpath 'com.android.tools.build:gradle:7.3.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "com.google.dagger:hilt-android-gradle-plugin:2.28-alpha"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:2.44"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -18,16 +18,11 @@ plugins {
   id "org.sonarqube" version "3.4.0.2513"
 }
 
-sonarqube {
-  properties {
-    property "sonar.projectKey", "amanattri09_Android-Architecture-Project_AYPvULHg_JafnDh1W-r1"
-  }
-}
 
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 
@@ -35,6 +30,3 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-ext {
-    hilt_viewmodels = '1.0.0-alpha03'
-}
